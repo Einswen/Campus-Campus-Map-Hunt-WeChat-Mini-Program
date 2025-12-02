@@ -1,0 +1,227 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.panorama-scroll {
+  width: 100vw;
+  height: 100vh;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.panorama-img {
+  height: 100vh;
+  display: inline-block;
+}
+
+.map-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-canvas {
+  width: 90%;
+  height: 70%;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+
+.map-controls {
+  display: flex;
+  gap: 30rpx;
+  margin-top: 40rpx;
+}
+
+.submit-btn, .close-btn {
+  background-color: #fff;
+  padding: 12rpx 30rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+}
+
+/* ...原样式不变，补充箭头样式 */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 15;
+  opacity: 0.8;
+}
+
+.left-arrow {
+  left: 20rpx;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.right-arrow {
+  right: 20rpx;
+  transform: translateY(-50%)
+}
+
+guide_left {
+  position: absolute;  /* 确保元素脱离文档流，便于定位 */
+  right: -5px;
+  transform: translateY(-100%);
+ 
+}
+
+.guide_right {
+  position: absolute;  /* 确保元素脱离文档流，便于定位 */
+  left: 5px;
+  transform: translateY(-120%)scale(1.5);
+}
+
+
+.panorama-group {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.panorama-img {
+  height: 100vh;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* 已有样式保留 */
+
+.timeout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeout-modal {
+  width: 600rpx;
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 50rpx 40rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.timeout-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.timeout-text {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+}
+
+.restart-btn {
+  background-color: #007aff;
+  color: white;
+  font-size: 30rpx;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.timer-container {
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.timer-text {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10rpx 24rpx;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.bottom-btns {
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  gap: 20rpx;
+}
+
+.map-btn,
+.hint-btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12rpx;
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+}
+
+
+.arrow {
+  position: fixed;
+  top: 50%;
+  width: 100rpx;
+  height: 200rpx;
+  font-size: 40rpx;
+  color: rgba(255,255,255,0.8);
+  transform: translateY(-50%);
+  z-index: 100;
+  transition: opacity 0.5s ease;
+  user-select: none;
+}
+
+.left-arrow {
+  left: 20rpx;
+}
+
+.right-arrow {
+  right: 20rpx;
+}
+
+.map-tip {
+  position: absolute;
+  top: 20rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10rpx 0;
+  z-index: 30;
+  border-radius: 12rpx;
+}

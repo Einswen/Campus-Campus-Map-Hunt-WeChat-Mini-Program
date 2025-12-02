@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="title">关卡选择</view>
+  <view class="subtitle">更新日期08031247
+
+  </view>
+  
+  <view class="grid">
+    <button wx:for="{{levels}}" wx:key="index" class="level-btn" bindtap="goToLevel" data-level="{{item}}">
+      第{{item}}关
+    </button>
+    <view class="subtitle">11111111 pages/(n)/game.html</view>
+  </view>
+</view>

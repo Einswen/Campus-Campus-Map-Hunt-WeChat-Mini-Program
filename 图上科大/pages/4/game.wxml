@@ -1,0 +1,70 @@
+<view class="container">
+  
+  <!-- 顶部居中倒计时 -->
+<view class="timer-container">
+  <view class="timer-text">🕙 倒计时：{{timeLeft}}s</view>
+</view>
+
+<scroll-view
+  class="panorama-scroll"
+  scroll-x="true"
+  
+  scroll-left="{{scrollLeft}}"
+  enable-flex
+  bindscroll="onPanoramaScroll"
+>
+  <image class="panorama-img" src="{{panoramaImage}}" mode="heightFix" />
+  <image class="panorama-img" src="{{panoramaImage}}" mode="heightFix" />
+  <image class="panorama-img" src="{{panoramaImage}}" mode="heightFix" />
+</scroll-view>
+
+
+  
+  <!-- 地图 + 提示按钮并排 -->
+<view class="bottom-btns">
+  <button class="map-btn" bindtap="openMap">地图🗺️</button>
+  <button class="hint-btn" bindtap="showHint">提示🔔</button>
+</view>
+
+<!-- 箭头 -->
+<image wx:if="{{showArrows}}" class="arrow left-arrow" style="opacity: {{leftArrowOpacity}}" src="../src/img/Left.png" />
+<image wx:if="{{showArrows}}" class="arrow right-arrow" style="opacity: {{rightArrowOpacity}}" src="../src/img/Right.png" />
+
+<!-- 左侧引导 -->
+<image 
+  wx:if="{{}}" 
+  class="guide_left" 
+  src="../src/img/guide_left.png" 
+/>
+
+<!-- 右侧引导 -->
+<image 
+  wx:if="{{showArrows}}" 
+  class="guide_right" 
+  src="../src/img/guide_right.png" 
+/>
+
+
+
+
+  <!-- 地图弹窗层 -->
+  <view class="map-popup" wx:if="{{showMap}}">
+  <view wx:if="{{showMapTip}}" class="map-tip">{{mapTipText}}</view>
+
+  <canvas type="2d" id="mapCanvas" class="map-canvas" bindtap="onMapTap" />
+  <view class="map-controls">
+    <button class="submit-btn" bindtap="submitSelection">答题✅</button>
+    <button class="close-btn" bindtap="closeMap">关闭❌</button>
+  </view>
+</view>
+
+
+  <!-- 超时弹窗 -->
+  <view wx:if="{{showTimeoutModal}}" class="timeout-overlay">
+    <view class="timeout-modal">
+      <view class="timeout-title">⏰ 时间到！</view>
+      <view class="timeout-text">你没有在规定时间内完成任务</view>
+      <button class="restart-btn" bindtap="restartGame">重新开始</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+.container {
+  padding: 20px;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #07C160;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.level-btn {
+  width: 100px;
+  height: 40px;
+  background-color: #07C160;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 40px;
+}
